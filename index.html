@@ -3,7 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maxwell Chanzu - Portfolio</title>
+    <title>Maxwell Chanzu - Software Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Maxwell Chanzu, a Software Engineer specializing in full-stack development, machine learning, and IoT solutions based in Nairobi, Kenya.">
+    <meta name="keywords" content="Maxwell Chanzu, software engineer, full-stack developer, Nairobi, portfolio, web development, machine learning, IoT">
+    <meta name="author" content="Maxwell Chanzu">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicons/logo_max.png">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Maxwell Chanzu - Software Engineer Portfolio">
+    <meta property="og:description" content="Explore the portfolio of Maxwell Chanzu, a Nairobi-based software engineer skilled in React, Django, and IoT solutions.">
+    <meta property="og:image" content="https://maxwell-chanzu.is-a.dev/images/og-images/logo_max.png">
+    <meta property="og:url" content="https://maxwell-chanzu.is-a.dev">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maxwell Chanzu - Software Engineer Portfolio">
+    <meta name="twitter:description" content="Portfolio of Maxwell Chanzu, a Nairobi-based software engineer.">
+    <meta name="twitter:image" content="https://maxwell-chanzu.is-a.dev/images/og-images/logo_max.png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -278,10 +294,14 @@
 
         .carousel-button.prev {
             left: 10px;
+          color:rgba(211, 211, 211, 1.0);
+          font-weight: bold;
         }
 
         .carousel-button.next {
             right: 10px;
+          color:rgba(211, 211, 211, 1.0);
+          font-weight: bold;
         }
 
         /* Description Button */
@@ -439,10 +459,11 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(105, 105, 105, 1.0);
             backdrop-filter: blur(10px);
             color: white;
             padding: 15px;
+          font-weight:bold;
             cursor: pointer;
             border-radius: 50%;
         }
@@ -718,6 +739,19 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.35.0/js/jquery.terminal.min.js"></script>
     <script>
+        
+          // Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const hamburger = document.querySelector('.hamburger');
+    if (mobileMenu.classList.contains('active') && 
+        !mobileMenu.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+});
+      
         // Hamburger Menu Toggle
         document.querySelector('.hamburger').addEventListener('click', () => {
             const hamburger = document.querySelector('.hamburger');
@@ -790,7 +824,7 @@
             projects() {
                 this.echo('Here are the user\'s projects:');
                 this.echo('AgriMart: E-Commerce and IoT System (Flutter, Django)');
-                this.echo('The Hut: Tenant Management System (React, Node.js) - https://thehut-frontend.azurewebsites.net/');
+                this.echo('The Hut: Tenant Management System for Landords (React, Node.js) - https://thehut.onrender.com/');
                 this.echo('HutFinder: Property Platform (React, Node.js, MongoDB) - https://hfindr.azurecr.io/');
                 this.echo('BookStore: Desktop App (Python, Tkinter) - https://github.com/Maxc390/BookStore');
                 this.echo('B2B_Tracker: Analytics App (PHP, MySQL) - https://github.com/Maxc390/B2B_Tracker');
@@ -826,20 +860,40 @@
             {
                 title: 'AgriMart',
                 description: 'E-Commerce and IoT Sensor Monitoring System',
-                details: 'Developed in a group of 3 using Flutter and Django. Assists farm owners in managing farms and selling produce. Worked on backend and frontend of the marketplace.',
+                details: 'Collaborated in a group of 3 Developers using Flutter and Django. Assists farm owners in managing farms and selling produce. Worked on both the backend and frontend of the marketplace.',
                 images: [
-                    'https://images.unsplash.com/photo-1506158314351-8b9f2a8b64e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-                    'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-                    'https://images.unsplash.com/photo-1516321310762-4794371e6a6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'
-                ]
+            'images/projects/agrimart/start.jpg',
+            'images/projects/agrimart/register.jpg',
+            'images/projects/agrimart/login.jpg',
+            'images/projects/agrimart/home.jpg',
+            'images/projects/agrimart/martfilter.jpg',
+            'images/projects/agrimart/specificmart.jpg',
+            'images/projects/agrimart/palceorder.jpg',
+            'images/projects/agrimart/orders.jpg',
+            'images/projects/agrimart/editorder.jpg',
+            'images/projects/agrimart/notifiications.jpg'
+        ]
             },
             {
                 title: 'The Hut',
                 description: 'Tenant Management System',
-                details: 'Developed in a group of 5 using React and Node.js. Integrates MPESA payments via Daraja API. Worked on the entire frontend. Hosted on Azure: <a href="https://thehut-frontend.azurewebsites.net/">Link</a>',
+                details: 'Collaborated in a group of 5 developers using React and Node.js. Integrates MPESA payments via Daraja API. Worked on both the frontend and backend of the app from conceptualization to product,i also worked on the blockchain landlord and tenant agreements to prevent alteration of contracts in the middle of the contract period. Hosted on Azure: <a href="https://thehut-frontend.azurewebsites.net/">Link</a>',
                 images: [
-                    'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-                    'https://images.unsplash.com/photo-1560448204-603b3ec8e48c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'
+                               'images/projects/the-hut/homepage.jpg',
+            'images/projects/the-hut/landortenantlogint.jpg',
+            'images/projects/the-hut/signin.jpg',
+            'images/projects/the-hut/dashboard.jpg',
+            'images/projects/the-hut/overview.png',
+            'images/projects/the-hut/landlord tenants.jpg',
+            
+            'images/projects/the-hut/emptyagreements.jpg', 
+
+            'images/projects/the-hut/profile_landlord.jpg',
+            'images/projects/the-hut/dashboard.png',
+            'images/projects/the-hut/tenant_agreements.jpg',
+            'images/projects/the-hut/tenant_agreeornot.jpg',
+            'images/projects/the-hut/complaint_tenant.jpg'
+            
                 ]
             },
             {
@@ -847,17 +901,26 @@
                 description: 'Property Advertisement Platform',
                 details: 'Developed using React, Node.js, and MongoDB. Leverages Google Maps API. Worked on frontend, backend models, and CRUD APIs with Redux. Link: <a href="https://hfindr.azurecr.io/">Link</a>',
                 images: [
-                    'https://images.unsplash.com/photo-1560448204-603b3ec8e48c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-                    'https://images.unsplash.com/photo-1551288049-b1153b172c02?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'
-                ]
+                     'images/projects/hutfinder/hutfindertr_homepage.jpg',
+                     'images/projects/hutfinder/units.jpg',
+                     'images/projects/hutfinder/filters.jpg',
+                     'images/projects/hutfinder/properties.jpg',
+                     'images/projects/hutfinder/betterspecificpropertpage.jpg',
+                     'images/projects/hutfinder/bettercontinuationpage.jpg',
+                     'images/projects/hutfinder/propertyunit.jpg',
+                     'images/projects/hutfinder/lastlocation.jpg',
+                     'images/projects/hutfinder/choosesignin.jpg',
+                     'images/projects/hutfinder/landdash.jpg',
+                     'images/projects/hutfinder/landdash2.jpg',
+                     'images/projects/hutfinder/landpropertis.jpg'
+                                    ]
             },
             {
                 title: 'BookStore',
                 description: 'Desktop Application',
                 details: 'Python GUI app using Tkinter for bookshop stock keeping. GitHub: <a href="https://github.com/Maxc390/BookStore">Link</a>',
                 images: [
-                    'https://images.unsplash.com/photo-1516321310762-4794371e6a6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-                    'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'
+                   "images/projects/Bookstore/bookstore.png" 
                 ]
             },
             {
@@ -865,8 +928,7 @@
                 description: 'Web Business Analytics Software',
                 details: 'Built with PHP, MySQL, HTML, CSS, JS. Tracks business analytics with visualizations. GitHub: <a href="https://github.com/Maxc390/B2B_Tracker">Link</a>',
                 images: [
-                    'https://images.unsplash.com/photo-1551288049-b1153b172c02?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-                    'https://images.unsplash.com/photo-1533227268428-f9ed1a80e3e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'
+                  "images/projects/checktherepo.png" 
                 ]
             },
             {
@@ -874,8 +936,7 @@
                 description: 'Desktop Application',
                 details: 'Python project using PyGame to illustrate priority queue in a hospital setting. GitHub: <a href="https://github.com/Maxc390/Hospital-Priority_Queue-Queue">Link</a>',
                 images: [
-                    'https://images.unsplash.com/photo-1533227268428-f9ed1a80e3e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-                    'https://images.unsplash.com/photo-1506158314351-8b9f2a8b64e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'
+                   "images/projects/HospitalPriorityQ/screen.jpg" 
                 ]
             },
             {
@@ -883,8 +944,7 @@
                 description: 'Data Science Project',
                 details: 'Implementation in Python. GitHub: <a href="https://github.com/Maxc390/Stochastic_gradient- ">Link</a>',
                 images: [
-                    'https://images.unsplash.com/photo-1551288049-b1153b172c02?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-                    'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'
+                   "images/projects/Stochastic/screen.jpg" 
                 ]
             }
         ];
@@ -933,29 +993,62 @@
         }
 
         function attachCarouselListeners() {
-            document.querySelectorAll('.carousel').forEach(carousel => {
-                const images = carousel.querySelector('.carousel-images');
-                const prevButton = carousel.querySelector('.prev');
-                const nextButton = carousel.querySelector('.next');
-                let index = parseInt(images.getAttribute('data-index')) || 0;
-                const totalImages = images.children.length;
+    document.querySelectorAll('.carousel').forEach(carousel => {
+        const images = carousel.querySelector('.carousel-images');
+        const prevButton = carousel.querySelector('.prev');
+        const nextButton = carousel.querySelector('.next');
+        let index = parseInt(images.getAttribute('data-index')) || 0;
+        const totalImages = images.children.length;
+        let autoScrollInterval;
 
-                function updateCarousel() {
-                    images.style.transform = `translateX(-${index * 100}%)`;
-                    images.setAttribute('data-index', index);
-                }
+        function updateCarousel() {
+            images.style.transform = `translateX(-${index * 100}%)`;
+            images.setAttribute('data-index', index);
+        }
 
-                prevButton.addEventListener('click', () => {
-                    index = (index - 1 + totalImages) % totalImages;
-                    updateCarousel();
-                });
-
-                nextButton.addEventListener('click', () => {
+        function startAutoScroll() {
+            // Only start if modal is not open
+            if (document.getElementById('image-modal').style.display !== 'flex') {
+                autoScrollInterval = setInterval(() => {
                     index = (index + 1) % totalImages;
                     updateCarousel();
-                });
-            });
+                }, 5000); // 5 seconds for slow scrolling
+            }
         }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        // Start auto-scrolling on load
+        startAutoScroll();
+
+        // Stop auto-scrolling when modal opens, restart when it closes
+        document.getElementById('image-modal').addEventListener('transitionend', () => {
+            if (document.getElementById('image-modal').style.display === 'none') {
+                startAutoScroll();
+            }
+        });
+
+        // Stop auto-scrolling on hover, restart on mouse leave
+        carousel.addEventListener('mouseenter', stopAutoScroll);
+        carousel.addEventListener('mouseleave', startAutoScroll);
+
+        prevButton.addEventListener('click', () => {
+            stopAutoScroll(); // Stop auto-scroll on manual interaction
+            index = (index - 1 + totalImages) % totalImages;
+            updateCarousel();
+            startAutoScroll(); // Restart after interaction
+        });
+
+        nextButton.addEventListener('click', () => {
+            stopAutoScroll(); // Stop auto-scroll on manual interaction
+            index = (index + 1) % totalImages;
+            updateCarousel();
+            startAutoScroll(); // Restart after interaction
+        });
+    });
+}    
 
         function attachFlipListeners() {
             document.querySelectorAll('.desc-button').forEach(button => {
@@ -1025,6 +1118,14 @@
                 updatePaginationButtons();
             }
         });
+
+
+        // Close modal when clicking outside modal-content
+      document.getElementById('image-modal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('image-modal')) {
+          document.getElementById('image-modal').style.display = 'none';
+    }
+  });
 
         document.getElementById('next-page').addEventListener('click', () => {
             if ((currentPage + 1) * projectsPerPage < projects.length) {
