@@ -346,6 +346,21 @@
             overflow: auto;
             position: relative;
         }
+        #modal-info {
+            margin-top: 20px;
+            text-align: center;
+            color:"white";
+        }
+        #modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        #modal-desc {
+            font-size: 1rem;
+            color: #ddd;
+        }
 
         .modal-carousel {
             position: relative;
@@ -372,8 +387,8 @@
             right: 10px;
             color: white;
             font-size: 30px;
-            cursor: pointer;
-        }
+            cursor: pointer ;
+                   }
 
         .modal-button {
             position: absolute;
@@ -599,6 +614,10 @@
                 <div id="modal-carousel-images" class="modal-carousel-images" data-index="0"></div>
                 <button class="modal-button prev">&lt;</button>
                 <button class="modal-button next">&gt;</button>
+            </div>
+            <div id="modal-info">
+                <div id="modal-title"></div>
+                <div id="modal-desc"></div>
             </div>
         </div>
     </div>
@@ -838,7 +857,7 @@
             });
         }
 
-        function attachModalListeners() {
+       function attachModalListeners() {
             document.querySelectorAll('.carousel').forEach(carousel => {
                 carousel.addEventListener('click', () => {
                     const projectIndex = carousel.getAttribute('data-project-index');
@@ -851,6 +870,12 @@
                         img.src = src;
                         modalImages.appendChild(img);
                     });
+                    document.getElementById('modal-title').textContent = project.title;
+                    let desc = project.details.replace(/<[^>]+>/g, ''); // Remove HTML tags for plain text
+                    if (desc.length > 250) {
+                        desc = desc.substring(0, 250) + '...';
+                    }
+                    document.getElementById('modal-desc').textContent = desc;
                     document.getElementById('image-modal').style.display = 'flex';
                     attachModalCarouselListeners();
                 });
